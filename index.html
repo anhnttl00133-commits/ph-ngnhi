@@ -123,32 +123,7 @@ body {
     to { transform: translateY(-110vh); opacity: 0; }
 }
 
-/* page 2 */
-.stage { position: relative; width: 640px; height: 420px; }
 
-.photo {
-    position: absolute;
-    width: 110px; height: 110px;
-    object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-    background: white;
-    padding: 6px;
-    transition: all 0.4s ease;
-    cursor: pointer;
-}
-
-.photo:hover {
-    transform: scale(1.15) rotate(0deg) !important;
-    z-index: 10;
-}
-
-.spread { animation: spreadPop 0.8s ease; }
-
-@keyframes spreadPop {
-    0% { transform: scale(0.5) rotate(-20deg); opacity: 0; }
-    100% { transform: scale(1) rotate(0); opacity: 1; }
-}
 
 /* page 3 */
 .cupid-scene { position: relative; width: 320px; height: 220px; }
@@ -210,20 +185,6 @@ body {
 <div>Nhe</div>
 </div>
 
-</div>
-<button class="nav-btn" onclick="nextPage()">Tiếp</button>
-</div>
-
-<!-- PAGE 2 -->
-<div class="page" id="page2">
-<div class="stage" id="stage">
-<!-- photos -->
-<!-- 👉 DÁN ẢNH CỦA BẠN VÀO CÁC DÒNG DƯỚI -->
-<img class="photo" src="IMG_3832.PNG">
-<img class="photo" src="5C203EE1-8349-4214-AAD5-24DDA4E19C0B.jpg">
-<img class="photo" src="att.csgnYStWG3e58VfNXHS8j6dQeWshDPmETes-p-0N8vQ.jpg">
-<img class="photo" src="DAIMG_3832.PNG">
-<img class="photo" src="D4CD699A7-1A27-4F71-8122-3BA196B58B27.jpg">
 </div>
 <button class="nav-btn" onclick="nextPage()">Tiếp</button>
 </div>
