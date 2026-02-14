@@ -37,17 +37,18 @@ body {
 /* navigation button */
 .nav-btn {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 90px;
-    height: 90px;
+    right: 18px;
+    bottom: 18px;
+    width: 95px;
+    height: 95px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(45deg,#ff4d6d,#ff8fab);
     color: white;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,14 +58,15 @@ body {
 
 .nav-btn::before {
     content: "❤";
-    font-size: 28px;
-    line-height: 1;
+    font-size: 30px;
+    margin-bottom: 4px;
 }
 
-.nav-btn:hover { transform: scale(1.1); }
-.nav-btn:active { transform: scale(0.95); }
+.nav-btn:hover { transform: scale(1.12); }
+.nav-btn:active { transform: scale(0.92); }
 
 /* page 1 */
+
 .couple { display: flex; align-items: center; gap: 25px; }
 .person { display: flex; flex-direction: column; align-items: center; font-weight: bold; }
 .avatar {
@@ -102,9 +104,7 @@ body {
     50% { transform: rotate(-45deg) scale(1.15); box-shadow: 0 0 30px rgba(255,77,109,0.9); }
     100% { transform: rotate(-45deg) scale(1); box-shadow: 0 0 15px rgba(255,77,109,0.5); }
 }
-    50% { transform: rotate(-45deg) scale(1.15); box-shadow: 0 0 30px rgba(255,77,109,0.9); }
-    100% { transform: rotate(-45deg) scale(1); box-shadow: 0 0 15px rgba(255,77,109,0.5); }
-}
+
     50% { transform: rotate(-45deg) scale(1.15); }
     100% { transform: rotate(-45deg) scale(1); }
 }
@@ -196,7 +196,7 @@ body {
 <div class="couple">
 
 <div class="person">
-<img class="avatar" src="IMG_4640.JPG">
+<img class="avatar" src="A6CA197D-1CD0-40D5-9171-BE08F2B63702 (1).jpg">
 <div>Nhi</div>
 </div>
 
@@ -206,7 +206,7 @@ body {
 </div>
 
 <div class="person">
-<img class="avatar" src="A6CA197D-1CD0-40D5-9171-BE08F2B63702 (1).jpg">
+<img class="avatar" src="IMG_4640.JPG">
 <div>Nhe</div>
 </div>
 
@@ -219,30 +219,9 @@ body {
 <div class="stage" id="stage">
 <!-- photos -->
 <script>
-const images = [
-    "4CD699A7-1A27-4F71-8122-3BA196B58B27.jpg",
-    "5C203EE1-8349-4214-AAD5-24DDA4E19C0B.jpg",
-    "AFCC3B5E-4618-43A7-938C-D446CDB6CAC1 (1).JPG",
-    "IMG_3327.PNG",
-    "IMG_4112.PNG",
-    "att.JqrqCzjreBDbdjScLzTZIIz9TCpoDAZp_Zcmhw8AqnY.jpg",
-    "att.csgnYStWG3e58VfNXHS8j6dQeWshDPmETes-p-0N8vQ.jpg",
-    "att.mCxtBB8cjNfxKg5ZUXO_GW0Xo075jIPXbqJxR9qpTx4.jpg",
-    "IMG_3832.PNG",
-    "IMG_3833.PNG",
-    "IMG_3834.PNG",
-    "IMG_3835.PNG",
-    "IMG_3501 (1).HEIC",
-    "IMG_3502 (1).HEIC",
-    "IMG_4640.JPG"
-];
-
-images.forEach(link => {
-    document.write(`<img class="photo" src="${link}">`);
-});
-</script>
-
-
+for (let i = 1; i <= 15; i++) {
+    document.write(`<img class="photo" src="https://picsum.photos/200?${i}">`);
+}
 </script>
 </div>
 <button class="nav-btn" onclick="nextPage()">Tiếp</button>
@@ -318,7 +297,7 @@ function flyAndSpread() {
 }
 
 /* typing */
-const msg = "Chúc Nhi một ngày Valentine thật ngọt ngào ❤️ Chúc cho cô gái anh yêu nhất một ngày 14/02 thật ý nghĩa, tràn ngập niềm vui và hạnh phích =))). Chúc vợ mãi luôn vui vẻ, cười tươi thật nhiều. Và Nhe cũn xin nhũi em vì hôm nay Nhe hoog thể bên em phải để em thiệt thòi. Nhưng mà anh thương baby nhắm baby đừng giần anh nhá.... " anh iu vợ rất nhìuuuuu ❤️ "";
+const msg = "Chúc Nhi một ngày Valentine thật ngọt ngào ❤️ Chúc cho cô gái anh yêu nhất một ngày 14/02 thật ý nghĩa, tràn ngập niềm vui và hạnh phích =))). Chúc vợ mãi luôn vui vẻ, cười tươi thật nhiều. Và Nhe cũn xin nhũi em vì hôm nay Nhe hoog thể bên em phải để em thiệt thòi. Nhưng mà anh thương baby nhắm baby đừng giần anh nhá.... \" anh iu vợ rất nhìuuuuu ❤️ \"";
 let typed = false;
 
 function typeText(){
