@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Love</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    animation: fade 0.8s ease;
+}
+
+.active { display: flex; }
+
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* navigation button */
+.nav-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 90px;
+    height: 90px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg,#ff4d6d,#ff8fab);
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.nav-btn::before {
+    content: "❤";
+    font-size: 28px;
+    line-height: 1;
+}
+
+.nav-btn:hover { transform: scale(1.1); }
+.nav-btn:active { transform: scale(0.95); }
+
+/* page 1 */
+.couple { display: flex; align-items: center; gap: 25px; }
+.person { display: flex; flex-direction: column; align-items: center; font-weight: bold; }
+.avatar {
+    width: 90px; height: 90px; border-radius: 50%; object-fit: cover;
+    border: 4px solid white;
+}
+
+.heart-center { display: flex; flex-direction: column; align-items: center; }
+
+.heart {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    background: linear-gradient(145deg,#ff4d6d,#ff758f);
+    transform: rotate(-45deg);
+    animation: pulse 1.3s infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(255,77,109,0.6);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart::before { top: -55px; left: 0; }
+.heart::after { left: 55px; top: 0; }
+
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); box-shadow: 0 0 15px rgba(255,77,109,0.5); }
+    50% { transform: rotate(-45deg) scale(1.15); box-shadow: 0 0 30px rgba(255,77,109,0.9); }
+    100% { transform: rotate(-45deg) scale(1); box-shadow: 0 0 15px rgba(255,77,109,0.5); }
+}
+    50% { transform: rotate(-45deg) scale(1.15); box-shadow: 0 0 30px rgba(255,77,109,0.9); }
+    100% { transform: rotate(-45deg) scale(1); box-shadow: 0 0 15px rgba(255,77,109,0.5); }
+}
+    50% { transform: rotate(-45deg) scale(1.15); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+.days { margin-top: 15px; font-size: 20px; font-weight: bold; }
+
+/* floating hearts */
+.floating-heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* page 2 */
+.stage { position: relative; width: 640px; height: 420px; }
+
+.photo {
+    position: absolute;
+    width: 110px; height: 110px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+    background: white;
+    padding: 6px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.photo:hover {
+    transform: scale(1.15) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.spread { animation: spreadPop 0.8s ease; }
+
+@keyframes spreadPop {
+    0% { transform: scale(0.5) rotate(-20deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* page 3 */
+.cupid-scene { position: relative; width: 320px; height: 220px; }
+
+.cupid {
+    position: absolute;
+    font-size: 60px;
+    left: -80px; top: 40px;
+    animation: flyCupid 3s ease forwards;
+}
+
+@keyframes flyCupid {
+    0% { left: -80px; }
+    100% { left: 110px; }
+}
+
+.letter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 120px;
+    background: white;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    color: #ff4d6d;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: openLetter 1s ease forwards;
+}
+
+@keyframes openLetter { to { transform: scaleY(1); } }
+
+.letter-text { line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/audio/2022/02/23/audio_d1718ab41b.mp3">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+<div class="couple">
+
+<div class="person">
+<img class="avatar" src="https://picsum.photos/200?girl">
+<div>Nhi</div>
+</div>
+
+<div class="heart-center">
+<div class="heart"></div>
+<div class="days" id="loveDays"></div>
+</div>
+
+<div class="person">
+<img class="avatar" src="https://picsum.photos/200?boy">
+<div>Nhe</div>
+</div>
+
+</div>
+<button class="nav-btn" onclick="nextPage()">Tiếp</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<div class="stage" id="stage">
+<!-- photos -->
+<script>
+for (let i = 1; i <= 15; i++) {
+    document.write(`<img class="photo" src="https://picsum.photos/200?${i}">`);
+}
+</script>
+</div>
+<button class="nav-btn" onclick="nextPage()">Tiếp</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="cupid-scene">
+<div class="cupid">💘</div>
+<div class="letter"><div class="letter-text" id="typed"></div></div>
+</div>
+<button class="nav-btn" onclick="prevPage()">Lại</button>
+</div>
+
+<script>
+let current = 1;
+
+function showPage(n) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    const el = document.getElementById("page" + n);
+    if (el) el.classList.add("active");
+    if (n === 2) flyAndSpread();
+    if (n === 3) typeText();
+}
+
+function nextPage() {
+    current = current >= 3 ? 1 : current + 1;
+    showPage(current);
+}
+
+function prevPage() {
+    current = current <= 1 ? 3 : current - 1;
+    showPage(current);
+}
+
+/* love days */
+const startDate = new Date("2025-12-24");
+function updateLoveDays() {
+    const el = document.getElementById("loveDays");
+    if (!el) return;
+    const diff = new Date() - startDate;
+    const days = Math.floor(diff / 86400000);
+    el.textContent = `❤️ ${days} ngày yêu ❤️`;
+}
+updateLoveDays();
+
+/* floating hearts */
+function createHeart() {
+    const h = document.createElement("div");
+    h.className = "floating-heart";
+    h.textContent = "❤";
+    h.style.left = Math.random()*100+"vw";
+    h.style.animationDuration = (3+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}
+setInterval(createHeart, 600);
+
+/* photo spread */
+function flyAndSpread() {
+    const photos = document.querySelectorAll(".photo");
+    const cols = 5, gap = 10;
+
+    photos.forEach((p, i) => {
+        const row = Math.floor(i / cols);
+        const col = i % cols;
+        p.style.left = col*(110+gap)+"px";
+        p.style.top = row*(110+gap)+"px";
+        p.style.transform = `rotate(${Math.random()*20-10}deg)`;
+        p.classList.add("spread");
+        setTimeout(()=>p.classList.remove("spread"), 800);
+    });
+}
+
+/* typing */
+const msg = "Chúc Nhi một ngày Valentine thật ngọt ngào ❤️ Chúc cho cô gái anh yêu nhất một ngày 14/02 thật ý nghĩa, tràn ngập niềm vui và hạnh phích =))). Chúc vợ mãi luôn vui vẻ, cười tươi thật nhiều. Và Nhe cũn xin nhũi em vì hôm nay Nhe hoog thể bên em phải để em thiệt thòi. Nhưng mà anh thương baby nhắm baby đừng giần anh nhá.... " anh iu vợ rất nhìuuuuu ❤️ "";
+let typed = false;
+
+function typeText(){
+    if (typed) return;
+    typed = true;
+    const el = document.getElementById("typed");
+    if (!el) return;
+    let i = 0;
+
+    const timer = setInterval(()=>{
+        el.textContent += msg[i] || "";
+        i++;
+        if (i >= msg.length) clearInterval(timer);
+    }, 50);
+}
+
+/* simple runtime tests */
+console.assert(typeof nextPage === "function", "nextPage missing");
+console.assert(typeof prevPage === "function", "prevPage missing");
+console.assert(document.getElementById("page1"), "page1 missing");
+</script>
+
+</body>
+</html>
