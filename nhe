@@ -218,8 +218,30 @@ body {
 <div class="page" id="page2">
 <div class="stage" id="stage">
 <!-- photos -->
-<images>
-<img class="photo" src="images/1.jpg">
+<script>
+const images = [
+    "4CD699A7-1A27-4F71-8122-3BA196B58B27.jpg",
+    "5C203EE1-8349-4214-AAD5-24DDA4E19C0B.jpg",
+    "AFCC3B5E-4618-43A7-938C-D446CDB6CAC1 (1).JPG",
+    "IMG_3327.PNG",
+    "IMG_4112.PNG",
+    "att.JqrqCzjreBDbdjScLzTZIIz9TCpoDAZp_Zcmhw8AqnY.jpg",
+    "att.csgnYStWG3e58VfNXHS8j6dQeWshDPmETes-p-0N8vQ.jpg",
+    "att.mCxtBB8cjNfxKg5ZUXO_GW0Xo075jIPXbqJxR9qpTx4.jpg",
+    "IMG_3832.PNG",
+    "IMG_3833.PNG",
+    "IMG_3834.PNG",
+    "IMG_3835.PNG",
+    "IMG_3501 (1).HEIC",
+    "IMG_3502 (1).HEIC",
+    "IMG_4640.JPG"
+];
+
+images.forEach(link => {
+    document.write(`<img class="photo" src="${link}">`);
+});
+</script>
+
 
 </script>
 </div>
