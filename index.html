@@ -219,8 +219,8 @@ body {
 <div class="stage" id="stage">
 <!-- photos -->
 <script>
-for (let i = 1; i <= 15; i++) {
-    document.write(`<img class="photo" src=""4CD699A7-1A27-4F71-8122-3BA196B58B27.jpg",
+const images = [
+"4CD699A7-1A27-4F71-8122-3BA196B58B27.jpg",
 "5C203EE1-8349-4214-AAD5-24DDA4E19C0B.jpg",
 "AFCC3B5E-4618-43A7-938C-D446CDB6CAC1 (1).JPG",
 "IMG_3327.PNG",
@@ -233,8 +233,12 @@ for (let i = 1; i <= 15; i++) {
 "IMG_3834.PNG",
 "IMG_3835.PNG",
 "IMG_3501 (1).HEIC",
-"IMG_3502 (1).HEIC"{i}">`);
-}
+"IMG_3502 (1).HEIC"
+];
+
+images.forEach(src => {
+  document.write(`<img class="photo" src="${src}">`);
+});
 </script>
 </div>
 <button class="nav-btn" onclick="nextPage()">Tiếp</button>
