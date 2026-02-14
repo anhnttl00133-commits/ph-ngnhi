@@ -196,7 +196,7 @@ body {
 <div class="couple">
 
 <div class="person">
-<img class="avatar" src="https://picsum.photos/200?girl">
+<img class="avatar" src="IMG_4640.JPG">
 <div>Nhi</div>
 </div>
 
@@ -206,7 +206,7 @@ body {
 </div>
 
 <div class="person">
-<img class="avatar" src="https://picsum.photos/200?boy">
+<img class="avatar" src="A6CA197D-1CD0-40D5-9171-BE08F2B63702 (1).jpg">
 <div>Nhe</div>
 </div>
 
@@ -218,10 +218,9 @@ body {
 <div class="page" id="page2">
 <div class="stage" id="stage">
 <!-- photos -->
-<script>
-for (let i = 1; i <= 15; i++) {
-    document.write(`<img class="photo" src="https://picsum.photos/200?${i}">`);
-}
+<images>
+<img class="photo" src="images/1.jpg">
+
 </script>
 </div>
 <button class="nav-btn" onclick="nextPage()">Tiếp</button>
